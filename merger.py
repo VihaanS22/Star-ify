@@ -25,12 +25,12 @@ brights_data = df1[1:]
 dwarfs_headers = df2[0]
 dwarfs_data = df2[1:]
 
-final_headers = brights_headers + dwarfs_headers
+final_headers = brights_headers
 
-final_data =[]
+final_data = brights_data + dwarfs_data
 
-for index, data_row in enumerate(brights_data):
-    final_data.append(brights_data[index] + dwarfs_data[index])
+#for index, data_row in enumerate(brights_data):
+#    final_data.append(brights_data[index] + dwarfs_data[index])
 
 with open("final_stars.csv",'w') as f:
     csvwriter = csv.writer(f)
