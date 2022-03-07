@@ -63,7 +63,7 @@ if(dataset == "scrape"):
         Distance =[]
         Mass = []
         Radius =[]
-        Lum = []
+        
 
         #making a function scrape to scrape the data using all the inputs mentioned above
         def Scrape():
@@ -88,7 +88,7 @@ if(dataset == "scrape"):
                 Distance.append(temp_list[i][3])
                 Mass.append(temp_list[i][5])
                 Radius.append(temp_list[i][6])
-                Lum.append(temp_list[i][7])
+            
 
         #mentioning the function to use and start it
         Scrape()
@@ -174,3 +174,20 @@ if(dataset == "merge"):
         csvwriter.writerow(final_headers)   
         csvwriter.writerows(final_data)
 
+    df = pd.read_csv("final_stars.csv")
+
+    print(df.columns)
+
+    df.drop(["Unnamed: 0"], axis = 1, inplace=True)
+
+    print(df.columns)
+
+    data = df.dropna()
+
+    print(data)
+
+    data.reset_index(drop = True, inplace = True)
+
+    print(data)
+
+    data.to_csv("final_stars.csv")
