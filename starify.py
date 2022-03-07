@@ -94,7 +94,7 @@ if(dataset == "scrape"):
         Scrape()
 
         #making a df to group all the appended arrays together and naming columns. Then changing the df to a csv file.
-        df = pd.DataFrame(list(zip(Star_names,Distance,Mass,Radius,Lum)),columns=['Star_name','Distance','Mass','Radius','Luminosity'])
+        df = pd.DataFrame(list(zip(Star_names,Distance,Mass,Radius)),columns=['Star_name','Distance','Mass','Radius'])
         print(df)
         df.to_csv('bright_stars.csv')
 
